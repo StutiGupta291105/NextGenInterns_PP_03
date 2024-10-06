@@ -1,0 +1,52 @@
+import tkinter as tk 
+master = tk.Tk() 
+master.title("MARKSHEET") 
+
+master.geometry("800x400") 
+
+e1 = tk.Entry(master) 
+e4 = tk.Entry(master) 
+e5 = tk.Entry(master) 
+e6 = tk.Entry(master) 
+e7 = tk.Entry(master) 
+
+def display(): 
+	tot=0
+	tot=tot+int(e4.get())+int(e5.get())
+
+	tk.Label(master, text=str(tot)).grid(row=8, column=4) 
+
+	tk.Label(master, text=str(tot/4)).grid(row=9, column=4) 
+
+tk.Label(master, text="Name").grid(row=0, column=1) 
+tk.Label(master, text="         ").grid(row=1, column=0) 
+
+tk.Label(master, text="Srl.No").grid(row=2, column=0) 
+tk.Label(master, text="1   ").grid(row=3, column=0) 
+tk.Label(master, text="2   ").grid(row=4, column=0) 
+tk.Label(master, text="3   ").grid(row=5, column=0) 
+tk.Label(master, text="4   ").grid(row=6, column=0) 
+
+tk.Label(master, text="Subject").grid(row=2, column=1) 
+tk.Label(master, text="Grade 1 :- ").grid(row=3, column=1) 
+tk.Label(master, text="Grade 2 :- ").grid(row=4, column=1) 
+tk.Label(master, text="Grade 3 :- ").grid(row=5, column=1) 
+tk.Label(master, text="Grade 4 :- ").grid(row=6, column=1) 
+
+tk.Label(master, text="Grade").grid(row=2, column=2) 
+e4.grid(row=3, column=2) 
+e5.grid(row=4, column=2) 
+e6.grid(row=5, column=2) 
+e7.grid(row=6, column=2) 
+
+
+e1=tk.Entry(master) 
+e1.grid(row=0, column=2) 
+
+button1=tk.Button(master, text="SUBMIT", bg="grey", command=display) 
+button1.grid(row=7, column=2) 
+
+tk.Label(master, text="Total Marks: -").grid(row=8, column=2) 
+tk.Label(master, text="Average Marks: -").grid(row=9, column=2) 
+	
+master.mainloop()
